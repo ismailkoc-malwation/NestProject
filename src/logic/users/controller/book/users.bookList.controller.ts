@@ -8,6 +8,8 @@ import { JwtAuthGuard } from '../../../../custom/jwt/guard/jwt.guard';
 import { ListBookResponseDto } from '../../dto/response/book/listBook.response.dto';
 import { AuthRequestDto } from '../../../../custom/jwt/dto/auth.request.dto';
 
+// Guardlar direkt controllera verilebilir
+
 @ApiTags('Book')
 @ApiSecurity('access-token')
 @Controller('book/list')

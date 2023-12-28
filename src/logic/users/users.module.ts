@@ -8,6 +8,7 @@ import { UsersAuthorController } from './controller/author/users.author.controll
 import { UsersBookListModule } from './module/book/users.bookList.module';
 import { UsersBookListController } from './controller/book/users.bookList.controller';
 
+// Controllerlar ilgili olduğu moduleden otomatik import edilmeli
 @Module({
   imports: [
     UsersCategoryModule,

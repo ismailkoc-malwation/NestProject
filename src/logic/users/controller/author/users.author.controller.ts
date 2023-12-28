@@ -18,6 +18,8 @@ import { Roles } from '../../../../custom/decorator/role/role.decorator';
 import { Role } from '../../../../enum/role.enum';
 import { DeleteAuthorRequestDto } from '../../dto/request/author/deleteAuthor.request.dto';
 
+// Guardlar direkt controllera verilebilir
+
 @ApiTags('Author')
 @ApiSecurity('access-token')
 @Controller('author')

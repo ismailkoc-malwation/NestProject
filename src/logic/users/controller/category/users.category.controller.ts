@@ -18,6 +18,8 @@ import { Roles } from '../../../../custom/decorator/role/role.decorator';
 import { Role } from '../../../../enum/role.enum';
 import { DeleteCategoryRequestDto } from '../../dto/request/category/deleteCategory.request.dto';
 
+// Guardlar direkt controllera verilebilir
+
 @ApiTags('Category')
 @ApiSecurity('access-token')
 @Controller('category')
