@@ -18,6 +18,8 @@ import { UpdateBookRequestDto } from '../../dto/request/book/updateBook.request.
 import { Roles } from '../../../../custom/decorator/role/role.decorator';
 import { Role } from '../../../../enum/role.enum';
 
+// Guardlar direkt controllera verilebilir
+
 @ApiTags('Book')
 @ApiSecurity('access-token')
 @Controller('book')

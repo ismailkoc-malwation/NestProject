@@ -84,6 +84,8 @@ export class UsersCategoryService implements UsersCategoryInterface {
         ApiErrorEnum.api_error_invalid_input_data,
       );
     }
+
+    // Lean
     const category = await this.categoryModel.findOne({
       _id: req.categoryID,
       UserID: auth.user.id,
@@ -95,12 +97,16 @@ export class UsersCategoryService implements UsersCategoryInterface {
         ApiErrorEnum.api_error_category_not_found,
       );
     }
+
+    // Lean kullanılabilir
     const categoryRelationCheck = await this.bookModel.find({
       CategoryID: req.categoryID,
       UserID: auth.user.id,
       IsDeleted: false,
     });
     if (categoryRelationCheck.length > 0) {
+      // Burada neden 420 gönderiyoruz?
+      // 420 kodu neden API_ERROR'a denk geliyor?
       throwApiError(
         CustomExceptionCode.API_ERROR,
         ApiErrorEnum.api_error_category_has_book,

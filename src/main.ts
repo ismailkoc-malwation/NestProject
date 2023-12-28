@@ -3,6 +3,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { json, urlencoded } from 'express';
+// Neden var?
 //import * as csurf from 'csurf';
 import helmet from 'helmet';
 
@@ -31,7 +32,10 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api/document', app, document);
   app.useGlobalPipes(new ValidationPipe());
+  // Neden disabled edilmis?
   //app.use(csurf());
+
+  // https://stackoverflow.com/questions/76529512/how-to-config-apollo-sandbox-for-graphql-in-nestjs
   app.use(
     helmet({
       crossOriginEmbedderPolicy: false,
